@@ -1,0 +1,126 @@
+/*******************************************************************************
+ * "Modern serif" style: Source Serif 4 for reading, Inter for small UI text,
+ * white page with a navy accent. Fonts are loaded via
+ * third_party_libraries.google_fonts in _config.yml.
+ ******************************************************************************/
+
+$serif: "Source Serif 4", Georgia, serif;
+$sans: "Inter", system-ui, -apple-system, sans-serif;
+
+// Colors
+:root {
+  --global-bg-color: #ffffff;
+  --global-text-color: #1d1d1f;
+  --global-text-color-light: #6b6b70;
+  --global-theme-color: #1f4e8c;
+  --global-hover-color: #1f4e8c;
+  --global-divider-color: #e6e6e9;
+  --global-card-bg-color: #f8f8f9;
+  --global-code-bg-color: #f3f4f6;
+  --global-footer-bg-color: #ffffff;
+  --global-footer-text-color: #6b6b70;
+  --global-footer-link-color: #1f4e8c;
+}
+
+html[data-theme="dark"] {
+  --global-bg-color: #121316;
+  --global-text-color: #e9e9ec;
+  --global-text-color-light: #9c9ca4;
+  --global-theme-color: #8db4ff;
+  --global-hover-color: #8db4ff;
+  --global-divider-color: #2a2b30;
+  --global-card-bg-color: #1a1b1f;
+  --global-code-bg-color: #1f2024;
+  --global-footer-bg-color: #121316;
+  --global-footer-text-color: #9c9ca4;
+  --global-footer-link-color: #8db4ff;
+}
+
+// Reading text: serif
+body {
+  font-family: $serif;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.post-title {
+  font-family: $serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+// Small UI text: sans
+.navbar,
+.dropdown-menu,
+footer,
+.btn,
+.badge,
+.post-meta,
+.post-tags,
+.news .date,
+.news th,
+.publications .links,
+.publications .abbr,
+.contact-note,
+.more-info {
+  font-family: $sans;
+}
+
+.navbar .nav-link {
+  font-size: 0.9rem;
+}
+
+// Solid navbar so content doesn't show through while scrolling
+.navbar.fixed-top {
+  opacity: 1;
+}
+
+// News / latest-posts dates: quiet, one line
+.news th {
+  font-weight: 400;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  color: var(--global-text-color-light);
+  padding-right: 1.5rem;
+}
+
+// Round profile photo (cropped to a square so it never turns oval)
+.profile img {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+// On phones the profile stacks above the bio; keep the photo modest
+@media (max-width: 576px) {
+  .profile img {
+    display: block;
+    max-width: 200px;
+    margin: 0 auto;
+  }
+  .profile .more-info {
+    text-align: center;
+  }
+}
+
+.profile .more-info,
+.profile .more-info p {
+  font-family: $sans;
+  font-size: 0.85rem;
+  color: var(--global-text-color-light);
+  margin-bottom: 0.1rem;
+}
+
+// Fixed footer: light, with a hairline instead of the dark bar
+footer.fixed-bottom,
+footer.sticky-bottom {
+  border-top: 1px solid var(--global-divider-color);
+  font-size: 0.85rem;
+}
